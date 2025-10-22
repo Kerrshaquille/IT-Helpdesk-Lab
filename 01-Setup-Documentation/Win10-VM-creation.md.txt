@@ -1,0 +1,110 @@
+# Windows 10 Client VM Creation
+
+## Date: [Put today's date]
+## VM Name: Win10-Client
+## Purpose: End-user workstation for help desk troubleshooting practice
+
+---
+
+## VM Specifications
+
+| Setting | Value |
+|---------|-------|
+| Operating System | Windows 10 Pro (64-bit) |
+| RAM | 4 GB (4096 MB) |
+| CPU Cores | 2 |
+| Storage | 50 GB (Dynamically Allocated) |
+| Disk Type | VDI (VirtualBox Disk Image) |
+| Network | NAT (default) |
+
+---
+
+## Creation Steps Completed
+
+1. ✅ Opened VirtualBox and clicked "New"
+2. ✅ Named VM "Win10-Client" and selected Windows 10 (64-bit)
+3. ✅ Allocated 4096 MB (4GB) of RAM and 2 CPU cores
+4. ✅ Created a new virtual hard disk
+5. ✅ Selected VDI disk format
+6. ✅ Configured dynamically allocated storage (Pre-allocate Full Size: unchecked)
+7. ✅ Set disk size to 50GB
+8. ✅ Successfully created VM
+
+---
+
+## Issues Encountered & Solutions
+
+### Issue #1: Unattended Guest OS Installation Prompt
+**Problem:** During Step 2 (Name and Operating System), VirtualBox prompted for "Unattended Guest OS Installation Setup" asking for username (vboxuser) and password.
+
+**Solution:**
+- Left the unattended installation fields blank/empty
+- Proceeded with manual installation to maintain full control over the setup process
+- This allows for better documentation and learning of the installation process
+
+**Lesson Learned:** Newer versions of VirtualBox include an automatic installation feature. For learning purposes, manual installation is preferred.
+
+---
+
+### Issue #2: CPU Core Allocation Question
+**Problem:** During Step 3 (Memory and Processor), uncertain whether to use 1 or 2 CPU cores.
+
+**Solution:**
+- Changed from default 1 CPU to 2 CPUs
+- Host system has 8 cores (AMD Ryzen 7 5800X3D), so allocating 2 cores is safe
+- 2 CPUs provide better VM performance without impacting host system
+
+**Best Practice:** With an 8-core host CPU, safely allocate 2-4 cores per VM while leaving resources for the host.
+
+---
+
+### Issue #3: Storage Allocation Interface Difference
+**Problem:** During Step 6 (Storage), documentation mentioned "Dynamically allocated" option, but interface showed "Pre-allocate Full Size" checkbox instead.
+
+**Solution:**
+- Recognized that **"Pre-allocate Full Size" UNCHECKED** = Dynamically allocated storage
+- Kept checkbox unchecked to allow VM to only use space as needed
+- Set size to 50GB
+
+**Explanation:**
+- Pre-allocate UNCHECKED = Disk grows as needed (efficient)
+- Pre-allocate CHECKED = Immediately reserves full 50GB (not needed)
+
+**Lesson Learned:** VirtualBox interface changes between versions. Understanding the concept (dynamic vs. fixed allocation) is more important than exact button labels.
+
+---
+
+## Screenshots Reference
+
+- `01-VM-name-and-os.png` - Initial VM creation dialog
+- `02-VM-unattended-install-error.png` 
+- `03-VM-uncheck-unattended-install.png` - Unattended installation prompt (left blank)
+- `04-VM-memory-and-cpu - Memory (4GB) and CPU (2 cores) allocation
+- `05-VM-disktype-and-disksize.png` - VDI disk type selection and Dynamic allocation (Pre-allocate unchecked) and 50GB size
+- `06-Windows10-VM-created.png` - VM successfully created in VirtualBox
+
+---
+
+## Next Steps
+
+- Configure additional VM settings (display, storage controller)
+- Attach Windows 10 ISO file to virtual CD/DVD drive
+- Install Windows 10 operating system
+- Document installation process
+
+---
+
+## Troubleshooting Tips for Future Reference
+
+1. **When VirtualBox interface looks different:** Focus on understanding what the setting does, not just the exact wording
+2. **For unattended installations:** Leave fields blank for manual control and better learning
+3. **For CPU allocation:** Safe rule = allocate 25-50% of host CPU cores to VMs
+4. **For RAM allocation:** Safe rule = allocate 25-50% of host RAM to VMs
+
+---
+
+## Notes
+
+This VM creation went smoothly after understanding the newer VirtualBox interface changes. Encountered three minor issues that were all resolved by understanding the underlying concepts rather than following instructions verbatim. This is excellent practice for real-world IT troubleshooting where documentation may not match exact software versions.
+
+**Key Takeaway:** Always verify settings make sense conceptually, not just visually
