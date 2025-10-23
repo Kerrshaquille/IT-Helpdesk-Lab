@@ -1,0 +1,168 @@
+# Windows Server 2022 Installation & Configuration
+
+## Lab Setup Documentation
+
+-----
+
+## 1. VM Name and Operating System
+
+- **VM Name:** Server 2022
+- **ISO File:** server_eval_x64fre_en-us.iso
+- **OS:** Windows Server 2022 Standard Evaluation
+
+**Screenshot:** `01-vm-name-and-os.png`
+
+-----
+
+## 2. Virtual Hardware Specifications
+
+### Memory
+
+- **RAM:** 4096 MB (4 GB)
+
+### Processor
+
+- **CPU Cores:** 2
+
+**Screenshot:** `02-virtual-hardware-specs.png`
+
+-----
+
+## 3. Virtual Hard Disk Configuration
+
+- **Disk Size:** 50 GB
+- **Hard Disk File Type:** VDI (VirtualBox Disk Image)
+- **Storage Format:** Dynamically allocated (Pre-allocate Full Size: **unchecked**)
+
+**Screenshot:** `03-virtual-hard-disk-config.png`
+
+-----
+
+## 4. VM Creation Complete
+
+Virtual Machine “Server 2022” successfully created in VirtualBox.
+
+**Screenshot:** `04-vm-server2022-created.png`
+
+-----
+
+## 5. Microsoft Server Operating System Setup
+
+**Selected Edition:**
+
+- Windows Server 2022 Standard Evaluation (Desktop Experience)
+
+**Screenshot:** `05-server-edition-selection.png`
+
+-----
+
+## 6. Server 2022 Installation Complete
+
+- Windows Server 2022 installed successfully
+- Server Manager launched automatically
+
+**Screenshot:** `06-server-installed-server-manager.png`
+
+-----
+
+## 7. Guest Additions Installation
+
+VirtualBox Guest Additions installed to enable:
+
+- Improved display performance
+- Shared clipboard functionality
+- Shared folder access between host and VM
+- Better mouse integration
+
+**Screenshot:** `07-guest-additions-install.png`
+
+-----
+
+## 8. Guest Additions Reboot
+
+System restarted to complete Guest Additions installation.
+
+**Screenshot:** `08-guest-additions-reboot.png`
+
+-----
+
+## 9. Guest Additions - Create Shared Folder
+
+Configured shared folder in VirtualBox settings to enable file transfer between host PC and Server VM.
+
+**Screenshot:** `09-create-shared-folder.png`
+
+-----
+
+## 10. Shared Folder Configuration
+
+**Shared Folder Settings:**
+
+- **Folder Name:** Helpdesk-lab
+- **Folder Path:** [Host PC folder path]
+
+**Screenshot:** `10-shared-folder-name-helpdesk-lab.png`
+
+-----
+
+## 11. Shared Folder Options
+
+**Configuration:**
+
+- ✅ **Auto-mount:** Checked
+- ✅ **Make Permanent:** Checked
+
+These settings ensure the shared folder automatically mounts and persists across reboots.
+
+**Screenshot:** `11-shared-folder-options.png`
+
+-----
+
+## 12. Network Location Access
+
+**Shared Folder Accessible At:**
+
+- **Location:** This PC → Network Location
+- **Path:** `\\VBoxSvr\Helpdesk-lab`
+- **Drive Letter:** Z:
+
+**Screenshot:** `12-network-location-helpdesk-lab.png`
+
+-----
+
+## 13. Shared Folder Verification
+
+**Test File Created:**
+
+- Successfully created test file: “Welcome-Lab-Test” in shared folder
+- File accessible from both host PC and Server VM
+- Shared folder functionality confirmed working
+
+**Screenshot:** `13-shared-file-welcome-lab-test.png`
+
+-----
+
+## Summary
+
+✅ Windows Server 2022 VM created with 4GB RAM and 2 CPU cores
+✅ 50GB dynamically allocated virtual hard disk configured
+✅ Windows Server 2022 Standard Evaluation (Desktop Experience) installed
+✅ VirtualBox Guest Additions installed for enhanced functionality
+✅ Shared folder “Helpdesk-lab” configured and verified
+✅ Network location accessible at Z: drive (\VBoxSvr\Helpdesk-lab)
+✅ File sharing between host and VM working correctly
+
+-----
+
+## Next Steps
+
+- Active Directory Domain Services installation
+- Domain Controller promotion
+- User account creation and management
+
+-----
+
+## Screenshots
+
+All screenshots referenced in this documentation are located in:
+`01-Setup-Documentation/screenshots/`
