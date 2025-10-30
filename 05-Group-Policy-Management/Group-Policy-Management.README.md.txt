@@ -1,0 +1,428 @@
+# Group Policy Management - Password & Account Policies
+
+## Domain-Wide Security Policy Configuration
+
+-----
+
+## Overview
+
+This documentation covers Group Policy configuration for password and account security policies at the domain level. Group Policy allows administrators to enforce security settings across all computers and users in the domain from a centralized location.
+
+-----
+
+## 1. Group Policy Management Console
+
+**Action:** Opened Group Policy Management Console (GPMC)
+
+**Access Method:**
+
+- Start → Administrative Tools → Group Policy Management
+- OR: Run → `gpmc.msc`
+
+**Purpose:**
+
+- Central interface for managing all Group Policy Objects (GPOs)
+- Configure domain-wide security and configuration settings
+- Apply policies to users and computers
+
+**Screenshot:** `01-group-policy-management-console.png`
+
+-----
+
+## 2. Group Policy Management Permissions
+
+**Action:** Reviewed permissions for Group Policy management
+
+**Key Permissions:**
+
+- Who can create GPOs
+- Who can edit existing policies
+- Who can link GPOs to Organizational Units
+- Domain Admins typically have full control
+
+**Screenshot:** `02-group-policy-management-permission.png`
+
+-----
+
+## 3. Default Domain Policy
+
+**Policy Selected:** Default Domain Policy
+
+**Purpose:**
+
+- Pre-configured GPO applied to entire domain
+- Contains baseline security settings
+- Applies to all users and computers in domain
+- Highest precedence for domain-wide settings
+
+**Common Settings in Default Domain Policy:**
+
+- Password policies
+- Account lockout policies
+- Kerberos policies
+- User rights assignments
+
+**Screenshot:** `03-group-policy-default-domain-policy.png`
+
+-----
+
+## 4. Default Domain Policy - Group Policy Management Editor
+
+**Action:** Opened Group Policy Management Editor for Default Domain Policy
+
+**Navigation Path:**
+
+- Computer Configuration → Policies → Windows Settings → Security Settings
+
+**Key Areas:**
+
+- Account Policies (Password & Lockout)
+- Local Policies
+- Event Log
+- System Services
+- Security Options
+
+**Screenshot:** `04-group-policy-default-domain-management-editor.png`
+
+-----
+
+## 5. Password Policy Changes
+
+**Action:** Modified password policy settings
+
+**Common Password Policy Settings:**
+
+- Enforce password history
+- Maximum password age
+- Minimum password age
+- Minimum password length
+- Password must meet complexity requirements
+- Store passwords using reversible encryption
+
+**Purpose:**
+
+- Enhance domain security
+- Enforce strong password standards
+- Prevent password reuse
+- Comply with security best practices
+
+**Screenshot:** `05-group-policy-default-domain-password-changes.png`
+
+-----
+
+## 6. Account Policy Changes
+
+**Action:** Modified account lockout and security policies
+
+**Common Account Policy Settings:**
+
+**Account Lockout Policy:**
+
+- Account lockout duration
+- Account lockout threshold (number of failed attempts)
+- Reset account lockout counter after
+
+**Additional Account Policies:**
+
+- Kerberos policy settings
+- User rights assignments
+- Security options
+
+**Screenshot:** `06-group-policy-default-domain-account-policy-changes.png`
+
+-----
+
+## 7. Group Policy - Enforced
+
+**Action:** Set policy to “Enforced” status
+
+**What “Enforced” Means:**
+
+- Policy cannot be overridden by child OUs
+- Settings will apply regardless of other conflicting policies
+- Ensures critical security settings are maintained
+- Prevents accidental or intentional policy bypass
+
+**When to Use Enforced:**
+
+- Security-critical policies
+- Compliance requirements
+- Domain-wide mandatory settings
+
+**Screenshot:** `07-group-policy-default-domain-policy-enforced.png`
+
+-----
+
+## 8. Enforced Policy Settings Verified
+
+**Verification:** Confirmed enforced policy settings active
+
+**Status Indicators:**
+
+- Policy shows “Enforced: Yes”
+- Settings applied to domain
+- No conflicts or overrides possible
+
+**Screenshot:** `08-group-policy-default-domain-policy-enforced-settings.png`
+
+-----
+
+## 9. Verify Policy Application - Net User Command
+
+**Command:** `net user kathy /domain`
+
+**Purpose:**
+
+- Verify Group Policy settings applied to specific user
+- Check password and account policy details
+- Confirm domain-level policies in effect
+
+**Information Displayed:**
+
+- Password last set
+- Password expires date
+- Password changeable date
+- Account active status
+- Account expires
+- Logon hours allowed
+- Local Group Memberships
+- Global Group memberships
+
+**Screenshot:** `09-group-policy-net-user-kathy-domain.png`
+
+-----
+
+## Summary
+
+### Group Policy Configuration Completed
+
+✅ Opened Group Policy Management Console
+✅ Reviewed GPO permissions and access
+✅ Accessed Default Domain Policy
+✅ Opened Group Policy Management Editor
+✅ Modified password policy settings
+✅ Configured account lockout policies
+✅ Set policy to Enforced status
+✅ Verified policy enforcement
+✅ Confirmed policy application with net user command
+
+-----
+
+## Common Password Policy Settings Configured
+
+### Recommended Security Settings
+
+**Password Policies:**
+
+- **Enforce password history:** 24 passwords remembered
+- **Maximum password age:** 90 days (or per company policy)
+- **Minimum password age:** 1 day (prevents immediate password change back)
+- **Minimum password length:** 8-14 characters
+- **Password complexity:** Enabled (requires uppercase, lowercase, numbers, symbols)
+- **Reversible encryption:** Disabled (more secure)
+
+**Account Lockout Policies:**
+
+- **Account lockout threshold:** 5-10 invalid attempts
+- **Account lockout duration:** 30 minutes (or 0 for manual unlock)
+- **Reset counter after:** 30 minutes
+
+-----
+
+## Skills Demonstrated
+
+### Group Policy Administration
+
+- Navigating Group Policy Management Console
+- Understanding GPO hierarchy and inheritance
+- Editing domain-level policies
+- Enforcing critical security policies
+- Verifying policy application
+
+### Security Policy Implementation
+
+- Password complexity configuration
+- Account lockout policy setup
+- Security hardening at domain level
+- Compliance with security best practices
+
+### Verification & Testing
+
+- Using command-line tools (net user)
+- Confirming policy propagation
+- Validating policy settings on user accounts
+
+### Help Desk Skills
+
+- Understanding why password requirements exist
+- Explaining account lockout to users
+- Troubleshooting policy-related login issues
+- Documenting security configurations
+
+-----
+
+## Real-World Help Desk Scenarios
+
+### Ticket 1: “Why does my password need to be so complex?”
+
+**Resolution:** Explain Group Policy password requirements
+
+- Show domain security policy
+- Explain complexity requirements
+- Help user create compliant password
+
+### Ticket 2: “I keep getting locked out”
+
+**Investigation:** Check account lockout policy settings
+
+- Verify lockout threshold (e.g., 5 attempts)
+- Check failed login events
+- Identify cause (wrong password, old cached credentials)
+- Reset password if needed
+
+### Ticket 3: “Why can’t I reuse my old password?”
+
+**Explanation:** Password history policy
+
+- Domain policy remembers X previous passwords
+- Security measure to prevent password cycling
+- Help user create new unique password
+
+### Ticket 4: “How long until my password expires?”
+
+**Check:** Use `net user` command or AD properties
+
+- View password last set date
+- Calculate expiration based on policy
+- Proactively notify user before expiration
+
+-----
+
+## Group Policy Hierarchy & Precedence
+
+### Policy Application Order (LSDOU)
+
+1. **L**ocal - Computer’s local policy
+1. **S**ite - Policies linked to AD site
+1. **D**omain - Domain-level policies (Default Domain Policy)
+1. **O**U - Organizational Unit policies
+
+**Last Applied = Highest Precedence**
+
+### Enforced Policies
+
+- Override the normal precedence
+- Cannot be blocked by child OUs
+- Used for security-critical settings
+
+-----
+
+## Commands Used
+
+### View User Account Policy Settings
+
+```
+net user [username] /domain
+```
+
+### Force Group Policy Update (from client)
+
+```
+gpupdate /force
+```
+
+### View Applied Group Policies
+
+```
+gpresult /r
+```
+
+### Detailed Policy Report
+
+```
+gpresult /h c:\policy-report.html
+```
+
+-----
+
+## Best Practices Applied
+
+✅ **Modified Default Domain Policy for domain-wide settings**
+✅ **Enforced critical security policies**
+✅ **Configured password complexity requirements**
+✅ **Set appropriate account lockout thresholds**
+✅ **Verified policy application with command-line tools**
+✅ **Documented all policy changes**
+
+-----
+
+## Security Considerations
+
+### Password Policy Balance
+
+- **Too Strict:** Users write down passwords, increasing risk
+- **Too Lenient:** Weak passwords vulnerable to attacks
+- **Recommended:** 8-12 character minimum with complexity
+
+### Account Lockout Policy Balance
+
+- **Too Sensitive:** Frequent legitimate lockouts, help desk overload
+- **Too Lenient:** Vulnerable to brute force attacks
+- **Recommended:** 5-10 attempts with 30-minute lockout
+
+### Policy Testing
+
+- Test policies on test accounts before full deployment
+- Monitor help desk tickets for policy-related issues
+- Adjust based on organizational needs and security requirements
+
+-----
+
+## Troubleshooting Group Policy Issues
+
+### Policy Not Applying
+
+1. Check policy is linked to correct OU
+1. Verify no conflicting policies
+1. Check if policy is disabled
+1. Run `gpupdate /force` on client
+1. Check Group Policy processing event logs
+
+### User Affected by Wrong Policy
+
+1. Check OU membership
+1. Review policy precedence (LSDOU)
+1. Check for enforced policies
+1. Use `gpresult` to see applied policies
+
+-----
+
+## Next Steps
+
+- [ ] Create custom Organizational Units (OUs)
+- [ ] Create department-specific Group Policy Objects
+- [ ] Test policy application on different users
+- [ ] Configure additional security policies
+- [ ] Set up Group Policy for software deployment
+- [ ] Create documentation for end users about password policies
+
+-----
+
+## Screenshots
+
+All screenshots referenced in this documentation are located in:
+`05-Group-Policy-Management/screenshots/`
+
+-----
+
+## Portfolio Value
+
+**This demonstrates:**
+
+- Understanding of Active Directory Group Policy architecture
+- Ability to configure domain-wide security policies
+- Knowledge of password and account security best practices
+- Command-line proficiency for policy verification
+- Security-conscious administrative approach
+
+**Employer Takeaway:** Candidate understands enterprise security policy implementation and can configure and troubleshoot Group Policy - essential for systems administration and senior help desk roles.
