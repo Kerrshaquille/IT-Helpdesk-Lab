@@ -142,6 +142,47 @@ These settings ensure the shared folder automatically mounts and persists across
 
 -----
 
+## 14. Network Settings - Host-Only Adapter
+
+**Network Configuration:**
+
+- Configured Host-Only Adapter for internal lab network
+- Allows communication between VMs without internet dependency
+- Provides isolated network environment for domain services
+
+**Screenshot:** `14-network-settings-host-only-adapter.png`
+
+-----
+
+## 15. Static IP Configuration
+
+**Action:** Configured static IP address for Server 2022
+
+**Purpose:**
+
+- Domain Controllers require static IP addresses
+- Ensures consistent DNS resolution
+- Prevents IP address changes that could break Active Directory
+
+**Screenshot:** `15-static-ip-server-2022.png`
+
+-----
+
+## 16. Static IP Verification
+
+**Command:** `ipconfig`
+
+Verified static IP configuration applied successfully:
+
+- IP address assigned correctly
+- Subnet mask configured
+- Default gateway set (if applicable)
+- DNS server configured
+
+**Screenshot:** `16-static-ip-ipconfig.png`
+
+-----
+
 ## Summary
 
 ✅ Windows Server 2022 VM created with 4GB RAM and 2 CPU cores
@@ -151,6 +192,27 @@ These settings ensure the shared folder automatically mounts and persists across
 ✅ Shared folder “Helpdesk-lab” configured and verified
 ✅ Network location accessible at Z: drive (\VBoxSvr\Helpdesk-lab)
 ✅ File sharing between host and VM working correctly
+✅ Host-Only Adapter configured for internal lab network
+✅ Static IP address assigned to server
+✅ Network configuration verified with ipconfig
+
+-----
+
+## Network Configuration Details
+
+### Why Static IP?
+
+- **Domain Controllers** require static IP addresses
+- Clients use DC’s IP for DNS resolution
+- Dynamic IP changes would break domain services
+- Standard practice in production environments
+
+### Host-Only Adapter Benefits
+
+- Creates isolated network between VMs
+- Doesn’t require physical network connection
+- More secure for lab testing
+- Simulates internal corporate network
 
 -----
 
@@ -166,3 +228,4 @@ These settings ensure the shared folder automatically mounts and persists across
 
 All screenshots referenced in this documentation are located in:
 `01-Setup-Documentation/screenshots/`
+`Server2022-Screenshots`

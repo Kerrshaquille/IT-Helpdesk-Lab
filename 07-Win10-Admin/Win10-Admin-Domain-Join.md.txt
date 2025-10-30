@@ -1,0 +1,425 @@
+# Windows 10 Admin Account & Domain Join Configuration
+
+## Lab Setup Documentation
+
+-----
+
+## 1. Turn Account into Administrator
+
+**Action:** Computer Management → Local Users and Groups → Manage
+
+Initiated process to create or modify administrator account.
+
+**Screenshot:** `01-turn-account-into-admin-manage.png`
+
+-----
+
+## 2. Administrator Properties
+
+Opened administrator account properties to configure settings.
+
+**Screenshot:** `02-admin-properties.png`
+
+-----
+
+## 3. Account Enabled
+
+**Configuration:**
+
+- ✅ “Account is disabled” checkbox: **Unchecked**
+- Account enabled and ready for use
+
+**Screenshot:** `03-account-enabled-uncheck-box.png`
+
+-----
+
+## 4. Set Administrator Password
+
+**Action:** Right-click account → Set Password
+
+Initiated password configuration for administrator account.
+
+**Screenshot:** `04-admin-set-password.png`
+
+-----
+
+## 5. Administrator Password Set
+
+Password successfully configured for administrator account.
+
+**Screenshot:** `05-admin-password-set.png`
+
+-----
+
+## 6. Administrator Account Added
+
+Administrator account successfully created and configured on Windows 10.
+
+**Screenshot:** `06-admin-added.png`
+
+-----
+
+## 7. Delete User from PC
+
+**Action:** Removed local user account from computer
+
+Demonstrated user account deletion procedure.
+
+**Screenshot:** `07-delete-user-pc.png`
+
+-----
+
+## 8. Add Optional Feature
+
+**Action:** Settings → Apps → Optional Features → Add a feature
+
+Preparing to install Remote Server Administration Tools (RSAT).
+
+**Screenshot:** `08-add-optional-feature.png`
+
+-----
+
+## 9. Add Feature Selection
+
+Browsing available optional features for installation.
+
+**Screenshot:** `09-add-feature.png`
+
+-----
+
+## 10. RSAT Tools - Part 1
+
+**Feature Selected:** RSAT: Active Directory Domain Services and Lightweight Directory Services Tools
+
+Selected first set of RSAT tools for installation.
+
+**Screenshot:** `10-rsat-tools-pt1.png`
+
+-----
+
+## 11. RSAT Tools - Part 2
+
+Additional RSAT components selected:
+
+- Active Directory Users and Computers
+- Active Directory Administrative Center
+- Other AD management tools
+
+**Screenshot:** `11-rsat-tools-pt2.png`
+
+-----
+
+## 12. RSAT Tools Installation Complete
+
+Remote Server Administration Tools successfully installed on Windows 10.
+
+**Purpose:**
+
+- Manage Active Directory from Windows 10 client
+- Access AD Users and Computers remotely
+- Administer domain without logging into server
+
+**Screenshot:** `12-rsat-tools-installed.png`
+
+-----
+
+## 13. RSAT Active Directory Error - Part 1
+
+**Issue:** Attempted to open Active Directory Users and Computers
+
+Encountered connection error - unable to reach domain controller.
+
+**Screenshot:** `13-rsat-ad-users-computers-error-pt1.png`
+
+-----
+
+## 14. RSAT Active Directory Error - Part 2
+
+Error details displayed - connection to domain controller failed.
+
+**Cause:** Network configuration issue preventing domain communication.
+
+**Screenshot:** `14-rsat-ad-users-computers-error-pt2.png`
+
+-----
+
+## 15. Connect to Domain - Ping Error Part 1
+
+**Troubleshooting Action:** Attempted to ping domain controller
+
+Ping failed - no network connectivity to domain.
+
+**Screenshot:** `15-connect-to-domain-ping-error-pt1.png`
+
+-----
+
+## 16. Network Settings - Host-Only Adapter
+
+**Solution:** Configured Host-Only Adapter in network settings
+
+**Purpose:**
+
+- Enables communication between VMs
+- Matches server’s network configuration
+- Required for domain connectivity
+
+**Screenshot:** `16-network-settings-admin-host-only-adapter.png`
+
+-----
+
+## 17. Connect to Domain Error - Part 2
+
+Additional domain connection troubleshooting.
+
+**Screenshot:** `17-connect-to-domain-error-pt2.png`
+
+-----
+
+## 18. Static IP Configuration
+
+**Action:** Configured static IP address on Windows 10
+
+**Why Static IP?**
+
+- Ensures consistent network configuration
+- Points DNS to domain controller
+- Required for reliable domain connectivity
+
+**Screenshot:** `18-static-ip-win10-admin.png`
+
+-----
+
+## 19. Static IP - Domain Ping Success
+
+**Verification:** Successfully pinged domain controller after static IP configuration
+
+✅ Network connectivity established
+✅ Can reach domain controller
+✅ Ready to join domain
+
+**Screenshot:** `19-static-ip-connect-to-domain-ping.png`
+
+-----
+
+## 20. Administrator Connect to Domain Login
+
+**Action:** System Properties → Computer Name → Change → Domain
+
+Entered domain credentials to join Windows 10 to KHTech.com domain.
+
+**Screenshot:** `20-admin-connect-to-domain-login.png`
+
+-----
+
+## 21. Administrator Connected to Domain
+
+**Success:** Windows 10 successfully joined to domain
+
+“Welcome to the KHTech.com domain” message received.
+
+**Screenshot:** `21-admin-connected-to-domain.png`
+
+-----
+
+## 22. Domain Connection Successful
+
+Domain join completed successfully.
+
+- Computer is now member of KHTech.com domain
+- Restart required to complete configuration
+
+**Screenshot:** `22-domain-admin-successfully-connected.png`
+
+-----
+
+## 23. Login as Domain User (Kathy)
+
+**Action:** Logged in using domain user account
+
+- Username: Kathy
+- Domain: KHTech.com
+- Testing domain authentication
+
+**Screenshot:** `23-login-as-user-kathy.png`
+
+-----
+
+## 24. User Login Successful
+
+Domain user (Kathy) successfully logged into Windows 10 client.
+
+✅ Domain authentication working
+✅ User profile created
+✅ Domain integration complete
+
+**Screenshot:** `24-user-login-successful.png`
+
+-----
+
+## Summary
+
+### Administrator Account Management
+
+✅ Created/configured local administrator account
+✅ Enabled administrator account
+✅ Set administrator password
+✅ Deleted unnecessary local user accounts
+
+### RSAT Installation
+
+✅ Installed Remote Server Administration Tools
+✅ Added Active Directory management tools
+✅ Enabled remote domain administration capability
+
+### Troubleshooting & Network Configuration
+
+✅ Identified RSAT connection error
+✅ Diagnosed network connectivity issue (ping failure)
+✅ Configured Host-Only Adapter
+✅ Set static IP address
+✅ Verified connectivity with successful ping
+
+### Domain Integration
+
+✅ Joined Windows 10 to KHTech.com domain
+✅ Authenticated with domain administrator
+✅ Tested domain user login (Kathy)
+✅ Confirmed domain authentication working
+
+-----
+
+## Skills Demonstrated
+
+### Windows 10 Administration
+
+- Local user and group management
+- Administrator account creation and configuration
+- Optional features installation
+- Network adapter configuration
+- Static IP address assignment
+
+### Troubleshooting Methodology
+
+- Identified connectivity issue with RSAT
+- Used ping command for network diagnostics
+- Applied systematic troubleshooting approach
+- Tested solution after configuration changes
+- Verified successful resolution
+
+### Active Directory Integration
+
+- Joined computer to domain
+- Configured DNS settings for domain
+- Installed RSAT for remote management
+- Tested domain user authentication
+- Verified domain functionality
+
+### Help Desk Relevant Skills
+
+- Computer setup and configuration
+- Network troubleshooting
+- Domain join procedures
+- User authentication testing
+- Remote administration tools setup
+
+-----
+
+## Troubleshooting Summary
+
+### Problem
+
+- RSAT tools could not connect to domain controller
+- Ping to domain failed
+- Computer unable to communicate with domain
+
+### Root Cause Analysis
+
+1. Network adapter not configured for internal lab network
+1. No static IP configuration
+1. DNS not pointing to domain controller
+
+### Solution Applied
+
+1. ✅ Configured Host-Only Adapter (matching server configuration)
+1. ✅ Assigned static IP address
+1. ✅ Set DNS to domain controller IP
+1. ✅ Verified connectivity with ping test
+1. ✅ Successfully joined domain
+
+### Verification
+
+- Ping to domain controller successful
+- Domain join completed without errors
+- Domain user login working
+- RSAT tools can now access domain (after domain join)
+
+-----
+
+## Network Configuration Details
+
+### Static IP Configuration
+
+- Ensures consistent IP address assignment
+- Required for reliable domain connectivity
+- DNS points to domain controller (192.168.10.1)
+
+### Host-Only Adapter
+
+- Matches server network configuration
+- Creates isolated lab network between VMs
+- Enables domain controller communication
+
+-----
+
+## Real-World Help Desk Scenarios Practiced
+
+### Scenario 1: RSAT Installation for Remote Management
+
+**Ticket:** “Need to manage Active Directory from workstation”
+
+- Installed RSAT tools on Windows 10
+- Configured network connectivity
+- Enabled remote domain administration
+
+### Scenario 2: Network Connectivity Troubleshooting
+
+**Ticket:** “Cannot connect to domain controller”
+
+- Used ping to diagnose connectivity issue
+- Identified network configuration problem
+- Applied network adapter and IP configuration
+- Verified solution with successful ping
+
+### Scenario 3: Domain Join Procedure
+
+**Ticket:** “New computer needs to be added to domain”
+
+- Configured network settings
+- Joined computer to domain
+- Tested domain authentication
+- Verified user can log in with domain account
+
+### Scenario 4: User Authentication Testing
+
+**Ticket:** “Verify new user can log into workstation”
+
+- Tested domain user login (Kathy)
+- Confirmed authentication successful
+- Verified profile creation
+
+-----
+
+## Next Steps
+
+- [ ] Test RSAT tools now that domain join is complete
+- [ ] Create additional domain users and test login
+- [ ] Configure Group Policy and test application
+- [ ] Set up shared network resources
+- [ ] Practice additional troubleshooting scenarios
+
+-----
+
+## Screenshots
+
+All screenshots referenced in this documentation are located in:
+`07-Win10-Admin/screenshots/`
